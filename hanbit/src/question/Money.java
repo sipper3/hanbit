@@ -44,6 +44,16 @@ public class Money {
 
 		for (int i = 0; i < moneyUnit.length; i++) {
 			// 이 부분을 코딩하여 완성하시오
+			mok = money / moneyUnit[i];
+			nmg = money % moneyUnit[i];
+			money = nmg;
+			if (moneyUnit[i] > 500) {
+				System.out.println(moneyUnit[i] + "원 : "+ mok + "매");
+			}else{
+				System.out.println(moneyUnit[i] + "원 : "+ mok + "개");
+			}
+			
+			
 		}
 	}
 }

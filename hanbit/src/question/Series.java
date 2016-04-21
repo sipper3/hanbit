@@ -18,12 +18,15 @@ public class Series {
 
 		while (d <= 20) {
 			// 이 부분을 코딩하여 완성하시오
-			System.out.print(sum+"+"+d+" = ");
-			sum += d;
-			System.out.println(sum);
+			sum += i;
+			total += sum;
 			
+			if(d < 20) System.out.print(sum+"+");
+			else System.out.print(sum+" = ");
 			
+			i++;
 			d++;
 		}
+		System.out.print(total);
 	}
 }

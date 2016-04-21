@@ -33,5 +33,22 @@ public class Gugudan {
 		int i = 0, j = 0;
 
 		// [결과]와 같이 출력되도록 위 두변수를 사용하여 코딩하시오
+		for (j = 1; j <= 9; j++) {
+			i = 2;
+			while (i <= 5) {
+				System.out.print(i + "*" + j + "=" + i*j + "\t");
+				i++;
+			}
+			System.out.print("\n");
+		}
+		System.out.print("\n");
+		for (j = 1; j <= 9; j++) {
+			i = 6;
+			while (i <= 9) {
+				System.out.print(i + "*" + j + "=" + i*j + "\t");
+				i++;
+			}
+			System.out.print("\n");
+		}
 	}
 }

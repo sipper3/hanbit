@@ -24,6 +24,7 @@ public class MaxMin {
         	if(max < score[i]) max = score[i];
 			if(min > score[i]) min = score[i]; 
 		}
+        
         System. out.println( "최대값" + max );
         System. out.println( "최소값:" + min );
 	}

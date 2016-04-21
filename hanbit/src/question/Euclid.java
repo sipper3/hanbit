@@ -43,6 +43,9 @@ public class Euclid {
 
 		while (big % small != 0) {
 			// 이 부분을 코딩하여 완성하시오
+			nmg = big % small;
+			big = small;
+			small = nmg;
 		}
 		if (big % small == 0) {
 			gcd = nmg;
