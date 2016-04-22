@@ -40,7 +40,7 @@ public class Money {
 
 		int nmg = 0;
 
-		System.out.println("Money:" + money);
+		System.out.println("Money:" + money + " 원");
 
 		for (int i = 0; i < moneyUnit.length; i++) {
 			// 이 부분을 코딩하여 완성하시오
