@@ -18,29 +18,25 @@ public class GradeMain {
 		
 		//S : 변수선언 영역 ------------------------------
 		Scanner scanner = new Scanner(System.in);
-		Grade grade = new Grade();
-		int[] scores = new int[3];
-		int total = 0;
-		double avg = 0;
-		String gradeTxt = "", name = "";
+		GradeBean grade = new GradeBean();
+		GradeService service = new GradeServiceImpl();
 		//E : 변수선언 영역 ------------------------------
 		
 		//S : 파라미터 영역 ------------------------------
-		System.out.println("이름 : [], 국어 : [], 영어 : [], 수학: []");
-		name = scanner.next();
-		scores[0] = scanner.nextInt();
-		scores[1] = scanner.nextInt();
-		scores[2] = scanner.nextInt();
+		System.out.println("이름 : [], 국어 : [], 영어 : [], 수학: [], 자바: []");
 		//E : 파라미터 영역 ------------------------------
 		
 		//S : 메소드호출 영역 ------------------------------
-		total = grade.getTotalArray(scores);
-		avg = grade.getAvg(total, scores.length);
-		gradeTxt = grade.getGrade(avg);
+		grade.setName(scanner.next());
+		grade.setKor(scanner.nextInt());
+		grade.setEng(scanner.nextInt());
+		grade.setMath(scanner.nextInt());
+		grade.setJava(scanner.nextInt());
 		//E : 메소드호출 영역 ------------------------------
 		
 		//S : 결과출력 영역 ------------------------------
-		System.out.println(name+"님의 총점은 "+total+"점이고, 평균은 "+avg+"점이고, 학점은 "+gradeTxt+" 입니다.");
+		//System.out.println(name+"님의 총점은 "+total+"점이고, 평균은 "+avg+"점이고, 학점은 "+gradeTxt+" 입니다.");
+		System.out.println(grade.getName()+" : "+service.getGrade(grade)+" 학점");
 		//E : 결과출력 영역 ------------------------------
 				
 	}

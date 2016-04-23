@@ -41,7 +41,7 @@ public class KaupMain {
 		weight = scanner.nextDouble();
 		/* 연산 */
 		// 코딩하시오.
-		int idx = kaup.getKaupIndex(weight, height);
+		int idx = kaup.getKaupIndex(weight, height);//getKaupIndex에 전달되는 인자값은 아규먼트라 한다.
 		String resultMsg = kaup.getResult(idx);
 		/* 결과 출력 */
 		System.out.println(name+"님은 '"+resultMsg+"'입니다.");
