@@ -14,17 +14,21 @@ public class LottoMain {
 		
 		lotto.setMoney(scanner.nextInt());
 		
-		System.out.println("=== 로또번호 출력===");
-		//lotto.setLottos(lotto.getMoney());
+		
 		
 		int[][] result = lotto.getLottos();
-		
-		for (int i = 0; i < result.length; i++) {
-			for (int j = 0; j < result[i].length; j++) {
-				System.out.print(result[i][j]+"\t");
+		if(result == null || result.length == 0){
+			System.out.println("구매금액을 확인해주세요.");
+		}else{
+			System.out.println("=== 로또번호 출력===");
+			for (int i = 0; i < result.length; i++) {
+				for (int j = 0; j < result[i].length; j++) {
+					System.out.print(result[i][j]+"\t");
+				}
+				System.out.print("\n");
 			}
-			System.out.println("");
 		}
+		
 		
 		
 		

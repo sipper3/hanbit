@@ -1,5 +1,7 @@
 package lotto;
 
+import java.util.Arrays;
+
 public class Lotto {
 	private int money, balanceMoney;
 	private int[][] lottos;
@@ -12,15 +14,6 @@ public class Lotto {
 	public int getMoney() {
 		return this.money;
 	}
-	/*
-	public void setBalanceMoney(int balanceMoney) {
-		this.balanceMoney = balanceMoney;
-	}
-	public int getBalanceMoney() {
-		return this.balanceMoney;
-	}
-	*/
-	
 	
 	public void setLottos(int money) {
 		//2중 배열(lottos)에 this.generateRandomNum()을 사용하여
@@ -41,14 +34,15 @@ public class Lotto {
 					
 					while (this.isDuplication(num)) {
 						this.arr[j] = num;
-						this.lottos[i][j] = num;
 						break;
 					}
 				}
-				//this.lottos[i] = this.arr;
+				//정렬
+				//Arrays.sort(this.arr);
+				this.sort(this.arr);
+				
+				System.arraycopy(this.arr, 0, this.lottos[i], 0, this.arr.length);
 			}
-			//정렬처리
-			
 		}
 		
 		//this.lottos = lottos;
@@ -81,23 +75,28 @@ public class Lotto {
 		return result;
 	}
 	
-	public void sort(int[][] arr) {
+	public void sort(int[] arr) {
 		//로또번호의 오름차순으로 정렬하기
 		//25, 3, 30, 1, 11 --> 1, 3, 11, 25, 30
 		//2중 for-loop 사용 + SWAP정렬
 		//코드완성!
 		
-		for (int i = 0; i < arr.length; i++) {
-			int tmp = 45;
-			for (int j = 0; j < arr[j].length; j++) {
+		//Arrays.sort(arr);
+		int temp = 0;
+		for (int i = 0; i < arr.length-1; i++) {
+			for (int j = i+1; j < arr.length; j++) {
 				
-				while (tmp >= arr[i][j]) {
-					this.lottos[i][j] = arr[i][j];
-					break;
+				if(arr[i] > arr[j]){
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
 				}
 				
 			}
 		}
+		
+		this.arr = arr;
+		
 	}
 	public int count(int money) {
 		int count = 0;
