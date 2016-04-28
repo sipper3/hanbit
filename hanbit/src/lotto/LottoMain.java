@@ -14,9 +14,8 @@ public class LottoMain {
 		
 		lotto.setMoney(scanner.nextInt());
 		
-		
-		
 		int[][] result = lotto.getLottos();
+		
 		if(result == null || result.length == 0){
 			System.out.println("구매금액을 확인해주세요.");
 		}else{
@@ -28,9 +27,6 @@ public class LottoMain {
 				System.out.print("\n");
 			}
 		}
-		
-		
-		
 		
 	}
 }

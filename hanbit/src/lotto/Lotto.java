@@ -105,11 +105,5 @@ public class Lotto {
 		}
 		return (int)Math.ceil(money/1000);//몫만 리턴하는 메소드
 	}
-	/*
-	public int calcBalanceMoney(int money){
 		
-		return 0;
-	}
-	*/
-	
 }
