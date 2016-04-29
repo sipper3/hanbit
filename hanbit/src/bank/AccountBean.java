@@ -15,6 +15,36 @@ public class AccountBean {
 	 * toString, 계좌생성.
 	 * 
 	 */
+	public int getAccountNo() {
+		return accountNo;
+	}
+	public void setAccountNo(int accountNo) {
+		this.accountNo = accountNo;
+	}
+	public String getOwnerName() {
+		return ownerName;
+	}
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+	public int getPassword() {
+		return password;
+	}
+	public void setPassword(int password) {
+		this.password = password;
+	}
+	public int getRestMoney() {
+		return restMoney;
+	}
+	public void setRestMoney(int restMoney) {
+		this.restMoney = restMoney;
+	}
+	public static String getBankName() {
+		return BANK_NAME;
+	}
+	
+	
+	
 	
 
 	

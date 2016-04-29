@@ -1,10 +1,15 @@
 package bank;
 
 public class AdminServiceImpl implements AdminService {
-
+	
 	@Override
 	public String openAccount(String name, int password, int restMoney) {
 		// TODO Auto-generated method stub
+		
+		//randomNum = 1 + (int)(Math.random() * 45);
+		for (int i = 0; i < 6; i++) {
+			
+		}
 		return null;
 	}
 
