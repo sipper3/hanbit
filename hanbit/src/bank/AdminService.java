@@ -6,13 +6,13 @@ public interface AdminService {
 	 * 계좌를 개설하는데 관리자 입장에서 개설해 주는 로직
 	 * 사용자입장에서 입력한 데이터를 받아서 계좌를 개설해 준다
 	 * */ 
-	public String openAccount(String name, int password, int restMoney);
+	public String openAccount(AccountBean account);
 	/**
 	 * 2.계좌번호로 해당 계좌 정보 조회
 	 * 계좌번호로 특정계좌가 존재하는지 체크하고
 	 * 존재한다면 계좌정보를 호출하는 기능
 	 * */
-	public AccountBean searchAccountByAccountNo(int accountNo);
+	public AccountBean searchAccountByAccountNo(int accountNo, AccountBean account);
 	/**
 	 * 3.계좌명으로 계좌번호를 검색하는 기능
 	 * */ 

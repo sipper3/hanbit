@@ -15,11 +15,30 @@ public class AccountBean {
 	 * toString, 계좌생성.
 	 * 
 	 */
+	public AccountBean(){} // 디폴트생성자
+	public AccountBean(int accountNo,String ownerName,int password,int restMoney){
+		this.accountNo = accountNo;
+		this.ownerName = ownerName;
+		this.password = password;
+		this.restMoney = restMoney;
+	}
+	
+	
+	
 	public int getAccountNo() {
 		return accountNo;
 	}
 	public void setAccountNo(int accountNo) {
+		/*
+		int ranNo = 100000 + (int)(Math.random() * 1000000);
+		if(ranNo>1000000){
+			ranNo = ranNo - 100000;
+		}
+		
+		this.accountNo = ranNo;
+		*/
 		this.accountNo = accountNo;
+		
 	}
 	public String getOwnerName() {
 		return ownerName;

@@ -1,27 +1,53 @@
 package bank;
 
 public class AdminServiceImpl implements AdminService {
+	AccountBean[] accounts = new AccountBean[10];
+	private int count;
 	
 	@Override
-	public String openAccount(String name, int password, int restMoney) {
+	public String openAccount(AccountBean account) {
 		// TODO Auto-generated method stub
 		
-		//randomNum = 1 + (int)(Math.random() * 45);
-		for (int i = 0; i < 6; i++) {
-			
+		int accountNo = 100000 + (int)(Math.random() * 1000000);
+		if(accountNo>1000000){
+			accountNo = accountNo - 100000;
 		}
-		return null;
+		account.setAccountNo(accountNo);
+		
+		
+		accounts[count] = new AccountBean(account.getAccountNo(), account.getOwnerName(), account.getPassword(), account.getRestMoney());
+		
+		String result = "";
+		result += "["+accounts[count].BANK_NAME+"] "; 
+		result += accounts[count].getOwnerName()+"님의 계좌 ";
+		result += accounts[count].getAccountNo()+"가 개설되었습니다.";
+		
+		
+		count++;
+		
+		return result;
 	}
 
 	@Override
-	public AccountBean searchAccountByAccountNo(int accountNo) {
+	public AccountBean searchAccountByAccountNo(int accountNo, AccountBean account) {
 		// TODO Auto-generated method stub
-		return null;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i] != null && accounts[i].getAccountNo() == accountNo){
+				//account = new AccountBean(accounts[i].getAccountNo(), accounts[i].getOwnerName(), accounts[i].getPassword(), accounts[i].getRestMoney());
+				account.setAccountNo(accounts[i].getAccountNo());
+				account.setOwnerName(accounts[i].getOwnerName());
+				account.setPassword(accounts[i].getPassword());
+				account.setRestMoney(accounts[i].getRestMoney());
+			}
+		}
+		
+		return account;
 	}
 
 	@Override
 	public AccountBean[] searchAccountsByName(String name) {
 		// TODO Auto-generated method stub
+
 		return null;
 	}
 

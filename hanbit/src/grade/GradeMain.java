@@ -22,22 +22,40 @@ public class GradeMain {
 		GradeService service = new GradeServiceImpl();
 		//E : 변수선언 영역 ------------------------------
 		
-		//S : 파라미터 영역 ------------------------------
-		System.out.println("이름 : [], 국어 : [], 영어 : [], 수학: [], 자바: []");
-		//E : 파라미터 영역 ------------------------------
 		
-		//S : 메소드호출 영역 ------------------------------
-		grade.setName(scanner.next());
-		grade.setKor(scanner.nextInt());
-		grade.setEng(scanner.nextInt());
-		grade.setMath(scanner.nextInt());
-		grade.setJava(scanner.nextInt());
-		//E : 메소드호출 영역 ------------------------------
+		while (true) {
+			System.out.println("[메뉴] 1.서비스계속, 2.서비스종료");
+			int key = scanner.nextInt();
+			switch (key) {
+			case 1:
+				//S : 파라미터 영역 ------------------------------
+				System.out.println("이름 : [], 국어 : [], 영어 : [], 수학: [], 자바: []");
+				//E : 파라미터 영역 ------------------------------
+				
+				//S : 메소드호출 영역 ------------------------------
+				grade.setName(scanner.next());
+				grade.setKor(scanner.nextInt());
+				grade.setEng(scanner.nextInt());
+				grade.setMath(scanner.nextInt());
+				grade.setJava(scanner.nextInt());
+				//E : 메소드호출 영역 ------------------------------
+				
+				//S : 결과출력 영역 ------------------------------
+				//System.out.println(name+"님의 총점은 "+total+"점이고, 평균은 "+avg+"점이고, 학점은 "+gradeTxt+" 입니다.");
+				System.out.println(grade.getName()+" : "+service.getGrade(grade)+" 학점");
+				//E : 결과출력 영역 ------------------------------
+				break;
+			case 2:
+				System.out.println("서비스가 종료되었습니다.");
+				return;
+			default:
+				System.out.println("1 또는 2만 입력가능합니다.");
+				break;
+			}
+			
+		}
 		
-		//S : 결과출력 영역 ------------------------------
-		//System.out.println(name+"님의 총점은 "+total+"점이고, 평균은 "+avg+"점이고, 학점은 "+gradeTxt+" 입니다.");
-		System.out.println(grade.getName()+" : "+service.getGrade(grade)+" 학점");
-		//E : 결과출력 영역 ------------------------------
+		
 				
 	}
 
