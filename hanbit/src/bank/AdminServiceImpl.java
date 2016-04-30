@@ -1,7 +1,7 @@
 package bank;
 
 public class AdminServiceImpl implements AdminService {
-	AccountBean[] accounts = new AccountBean[10];
+	private AccountBean[] accounts = new AccountBean[10];
 	private int count;
 	
 	@Override
