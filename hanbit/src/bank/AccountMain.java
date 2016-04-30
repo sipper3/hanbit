@@ -40,7 +40,7 @@ public class AccountMain {
 			case 5: 
 				System.out.println("서비스가 종료되었습니다.");
 				return;
-			default:System.out.println("1~5번만 선택이 가능합니다");
+			default:System.out.println("1 ~ 5번만 선택이 가능합니다");
 				break;
 			}
 		}
